@@ -1,37 +1,30 @@
-import React from 'react';
-import {
-    View,
-    Text,
-  } from 'react-native';
+import React, {useState} from 'react';
+import {Image, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import Input from '../components/common/Input';
+import CustomButton from '../components/common/CustomButton';
+import LoginComponent from '../components/LoginComponent';
 
 const Login = () => {
+    const [form, setForm] = useState({});
+    const [text, onChangeText] = useState('');
 
-    const [text, onChangeText] = React.useState("Useless Text");
+    const onChange = ({name, value}) => {
 
-    return (
-        <View>
-            <Text>Login view</Text>
-            <Input
-                label="Username"
-                onChangeText={onChangeText}
-                value={text}
-                placeholder="useless placeholder"
-                keyboardType="numeric"
-                icon={<Text>HIDE</Text>}
-                iconPosition="right"
-            />
-            <Input
-                label="Username"
-                onChangeText={onChangeText}
-                value={text}
-                placeholder="useless placeholder"
-                keyboardType="numeric"
-                icon={<Text>HIDE</Text>}
-                iconPosition="right"
-            />
-        </View>
-    )
-}
+    };
+
+    const onSubmit = () => {
+    };
+
+    return <LoginComponent 
+        onSubmit={onSubmit}
+        onChange={onChange}
+        form={form}
+        // error={error}
+        // loading={loading}
+        // justSignedUp={justSignedUp}
+    />
+};
 
 export default Login;
