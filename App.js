@@ -27,6 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import AppNavContainer from './src/navigations';
+import GlobalProvider from './src/context/Provider';
 
 const Section = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -61,7 +62,12 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return <AppNavContainer></AppNavContainer>
+  return (
+    <GlobalProvider>
+      <AppNavContainer></AppNavContainer>
+    </GlobalProvider>
+  )
+    
 };
 
 const styles = StyleSheet.create({

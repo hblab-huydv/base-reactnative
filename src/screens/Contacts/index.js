@@ -3,12 +3,13 @@ import {
     View,
     Text,
   } from 'react-native';
+import Container from '../../components/common';
 
 const Contacts = () => {
     return (
-        <View>
+        <Container>
             <Text>Contacts view</Text>
-        </View>
+        </Container>
     )
 }
 
