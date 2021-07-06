@@ -4,7 +4,8 @@ import {
     Text,
     ScrollView,
   } from 'react-native';
-  import styles from './styles';
+  import { StyleSheet } from "react-native";
+
 
   const Container = ({style, children}) => {
       return (
@@ -15,5 +16,11 @@ import {
           </ScrollView>
       )
   };
+
+  const styles = StyleSheet.create({
+    wrapper: {
+        padding: 20
+    }
+  });
 
   export default Container;
